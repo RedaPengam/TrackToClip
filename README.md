@@ -1,4 +1,4 @@
-## DJ-Tool
+# DJ-Tool
 
 Function: Copy to clipboard any trackname from any Spotify playlist you like.
 

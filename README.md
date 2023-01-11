@@ -1,6 +1,6 @@
 # DJ-Tool
 
-Function: Copy to clipboard any trackname from any Spotify playlist you like.
+Function: Copy to clipboard any track name from any Spotify playlist you like.
 
 ## Prerequisites
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Name Getter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+    <nav>
+        <h1>Track Name Getter</h1>
+        <div id="description">
+            A quoi sert cet outil ?<br/><br/><br/><br/>
+            C'est très simple. Suivez ces étapes :<br/><br/>
+            1.  Entrez l'url d'une playlist Spotify dont vous souhaitez récupérer les titres.<br/><br/>
+            2.  Cliquez sur le bouton "Play".<br/><br/>
+            3.  Cliquez sur un titre pour le copier dans votre presse-papiers.         
+        </div>
+    </nav>
+    
+    <main id="main">            
+
+        <div id="selection">
+            <input id="input" type="text" placeholder="https://open.spotify.com/playlist/..."/>
+            <button onclick="displayTracks()">
+                <svg height="28" width="28" viewBox="0 0 24 24">
+                    <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path>
+                </svg>                
+            </button>
+        </div>
+
+        <div id="title">
+            <h2>Mes titres 👇</h2>
+        </div>
+        
+        <ul id="tracklist">
+        </ul>
+    </main>
+    
+</body>
+<script src="script.js"></script>
+
+</html>

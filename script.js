@@ -1,4 +1,4 @@
-// appli credentials
+// -------------------- appli credentials --------------------
 
 const CLIENT_ID = "5d19249ba10a493da4b918e3333e42a8";
 const CLIENT_SECRET = "3d3ca65cf99b4368afd08881d5d243ca";
@@ -21,7 +21,7 @@ async function fetchToken() {
   return data.access_token;
 };
 
-// api calls
+// -------------------- api calls --------------------
 
 /** Function to generate the playlist uri from its url.
  * @returns {string} uri - The playlist uri.
@@ -56,7 +56,7 @@ async function fetchTracks(uri, offset) {
   return data.items;
 };
 
-// other
+// -------------------- other --------------------
 
 /** Function to create a list of all track names using fecthTracks.
  * @param {string} uri - The playlist uri.
@@ -121,7 +121,7 @@ function createLi(id, string) {
   ul.appendChild(li);
 };
 
-// HTML handle
+// -------------------- HTML handle --------------------
 
 /** Function to handle the button clic.
  * 

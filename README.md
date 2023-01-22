@@ -5,6 +5,6 @@ Access the website here: https://redapengam.github.io/TrackToClip/
 
 ## Next features
 
-- [ ] "fr" & "en" switchable version
+- [x] "fr" & "en" switchable version
 - [ ] Spotify playlist info visible
 - [ ] Fancy animations

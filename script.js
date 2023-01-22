@@ -1,3 +1,7 @@
+// -------------------- global variables --------------------
+
+const selector = document.getElementById('langSelector');
+
 // -------------------- appli credentials --------------------
 
 const CLIENT_ID = "5d19249ba10a493da4b918e3333e42a8";
@@ -27,12 +31,21 @@ async function fetchToken() {
  * @returns {string} uri - The playlist uri.
  */
 function generateUri() {
-  // entered playlist url
-  var x = document.getElementById("input").value;
-  // generate api endpoint
-  TRACKS_URI = 'https://api.spotify.com/v1/playlists/' + x.split("/")[4] + '/tracks';
-
-  return TRACKS_URI;
+  var uri = ""; // init api endpoint
+  var x = document.getElementById("input-fr").value;
+  var y = document.getElementById("input-en").value;
+  // verify empty inputs
+  if (selector.value == 'fr' && x == '') {
+    alert("Aucune URL n'a été rentrée :/");
+  } else if (selector.value == 'en' && y == '') {
+    alert("No URL provided :/");
+  } else if (selector.value == 'fr' && x != '') {
+    uri = 'https://api.spotify.com/v1/playlists/' + x.split("/")[4] + '/tracks';
+  } else if (selector.value == 'en' && y != '') {
+    // generate api endpoint
+    uri = 'https://api.spotify.com/v1/playlists/' + y.split("/")[4] + '/tracks';
+  }
+  return uri;
 };
 
 /** Function to fetch 100 tracks (Spotify api limitation) from a specified playlist uri.
@@ -121,11 +134,9 @@ function createLi(id, string) {
   ul.appendChild(li);
 };
 
-// -------------------- HTML handle --------------------
+// -------------------- HTML handlers --------------------
 
-/** Function to handle the button clic.
- * 
- */
+// Function to handle the button clic.
 async function displayTracks() {
   // generate the playlist uri.
   const uri = generateUri();
@@ -134,14 +145,33 @@ async function displayTracks() {
   // display it in ul
   for (let i = 0; i < array_tracksName.length; i++) {
     createLi(i, array_tracksName[i]);
-  }
+  }  
 };
 
-/** Function to handle a li element clic.
- * 
- */
+// Function to handle a li element clic.
 function copyToClip(id) {
   const text = document.getElementById(id).innerHTML;
   navigator.clipboard.writeText(text);
   alert('"' + text + '"' + "\n\nCopié dans le presse-papiers !");
 };
+
+// Functions to change the page language. 
+function changeLanguage(languageCode) {
+  Array.from(document.getElementsByClassName('lang')).forEach(function (elem) {
+    if (elem.classList.contains('lang-' + languageCode)) {
+      elem.style.display = 'initial';
+    }
+    else {
+      elem.style.display = 'none';
+    }
+  });
+};
+// select handler
+selector.addEventListener('change', function(evt) {
+  changeLanguage(this.value);
+});
+// detect initial browser language
+const startLang = 'en';
+changeLanguage(startLang);
+// updating select with start value
+selector.selectedIndex = Array.from(selector.options).map(opt => opt.value).indexOf(startLang);

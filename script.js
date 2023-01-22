@@ -36,14 +36,21 @@ function generateUri() {
   var y = document.getElementById("input-en").value;
   // verify empty inputs
   if (selector.value == 'fr' && x == '') {
-    alert("Aucune URL n'a été rentrée :/");
+    alert("Aucune URL n'a été rentrée 🤨");
   } else if (selector.value == 'en' && y == '') {
-    alert("No URL provided :/");
+    alert("No URL provided 🤨");
   } else if (selector.value == 'fr' && x != '') {
-    uri = 'https://api.spotify.com/v1/playlists/' + x.split("/")[4] + '/tracks';
+    if (x.split("/")[0] != "https:" || x.split("/")[2] != "open.spotify.com" || x.split("/")[3] != "playlist") {
+      alert("URL de playlist Spotify non reconnue 🫤");
+    } else {
+      uri = 'https://api.spotify.com/v1/playlists/' + x.split("/")[4] + '/tracks';
+    }    
   } else if (selector.value == 'en' && y != '') {
-    // generate api endpoint
-    uri = 'https://api.spotify.com/v1/playlists/' + y.split("/")[4] + '/tracks';
+    if (y.split("/")[0] != "https:" || y.split("/")[2] != "open.spotify.com" || y.split("/")[3] != "playlist") {
+      alert("Spotify playlist URL not recognized 🫤");
+    } else {
+      uri = 'https://api.spotify.com/v1/playlists/' + y.split("/")[4] + '/tracks';
+    }
   }
   return uri;
 };
@@ -152,7 +159,11 @@ async function displayTracks() {
 function copyToClip(id) {
   const text = document.getElementById(id).innerHTML;
   navigator.clipboard.writeText(text);
-  alert('"' + text + '"' + "\n\nCopié dans le presse-papiers !");
+  if (selector.value == 'fr') {
+    alert('"' + text + '"' + "\n\nCopié dans le presse-papiers 👌");
+  } else if (selector.value == 'en' && y == '') {
+    alert('"' + text + '"' + "\n\nCopied to clipboard 👌");
+  }  
 };
 
 // Functions to change the page language. 
@@ -175,3 +186,15 @@ const startLang = 'en';
 changeLanguage(startLang);
 // updating select with start value
 selector.selectedIndex = Array.from(selector.options).map(opt => opt.value).indexOf(startLang);
+// 'Space' key handler
+document.addEventListener('keydown', event => {
+  if (event.code === 'Space') {
+    displayTracks();
+  }
+});
+// 'Enter' key handler
+document.addEventListener('keydown', event => {
+  if (event.code === 'Enter') {
+    displayTracks();
+  }
+});

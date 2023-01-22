@@ -5,5 +5,5 @@ Access the website here: https://redapengam.github.io/TrackToClip/
 
 ## To come
 
-- fr + en site version
-- Spotify playlist info
+- [ ] "fr" & "en" switchable version
+- [ ] display Spotify playlist info

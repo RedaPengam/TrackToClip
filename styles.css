@@ -2,14 +2,13 @@ html {
     font-family: 'Roboto', sans-serif;
     background-color: black;
     color: white;
-    --background-light-color: antiquewhite;
+    --background-light-color: #1f1f1f;
     --background-dark-color: #121212;
     --background-base: #1ed760;
     --background-highlight: #1fdf64;
     --background-press: #169c46;
     padding: 0;
     margin: 0;
-    background-color: var(--background-dark-color);
 }
 
 nav {
@@ -60,7 +59,7 @@ main {
     flex-direction: column;
     padding: 1.5rem;
     width: 100%;
-    background-color: var(--background-dark-color);
+    background: linear-gradient(var(--background-light-color), var(--background-dark-color));
 }
 
 h1#title {
@@ -130,6 +129,7 @@ button {
     margin-left: 1.5rem;
     justify-content: center;
     transition: 0.3s;
+    border: none;
 }
 
 button:hover {

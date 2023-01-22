@@ -143,7 +143,8 @@ button:hover {
 select {
     background-color: black;
     color: white;
-    border: none;
+    padding: .1rem;
+    border-radius: 10px;
 }
 select:hover {
     cursor: pointer;

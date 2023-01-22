@@ -7,4 +7,4 @@ Access the website here: https://redapengam.github.io/TrackToClip/
 
 - [x] "fr" & "en" switchable version
 - [ ] Spotify playlist info visible
-- [ ] Fancy animations
+- [ ] Fancy animations: loading & modals

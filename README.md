@@ -1,7 +1,8 @@
 # TrackToClip
 
 From any Spotify playlist, copy track names to clipboard 📋 in one clic!<br/>
-Access the website here: https://redapengam.github.io/TrackToClip/
+Access the website here:<br/>
+https://redapengam.github.io/TrackToClip/
 
 ## Features
 

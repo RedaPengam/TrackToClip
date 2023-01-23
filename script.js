@@ -158,12 +158,15 @@ async function displayTracks() {
 // Function to handle a li element clic.
 function copyToClip(id) {
   const text = document.getElementById(id).innerHTML;
+  // const text = document.getElementById(id);
+  // text.select();// select the input field
+  text.setSelectionRange(0,99999);// For mobile devices
   navigator.clipboard.writeText(text);
   if (selector.value == 'fr') {
     alert('"' + text + '"' + "\n\nCopié dans le presse-papiers 👌");
   } else if (selector.value == 'en' && y == '') {
     alert('"' + text + '"' + "\n\nCopied to clipboard 👌");
-  }  
+  }
 };
 
 // Functions to change the page language. 

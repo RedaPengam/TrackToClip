@@ -1,12 +1,15 @@
 html {
-    font-family: 'Roboto', sans-serif;
-    background-color: black;
-    color: white;
+    --background-lightest-color: white;
     --background-light-color: #1f1f1f;
     --background-dark-color: #121212;
+    --background-darkest-color: black;
     --background-base: #1ed760;
     --background-highlight: #1fdf64;
     --background-press: #169c46;
+    --font-color: white;
+    font-family: 'Roboto', sans-serif;
+    color: var(--font-color);
+    background-color: var(--background-darkest-color);
     padding: 0;
     margin: 0;
 }
@@ -17,12 +20,11 @@ nav {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     padding-top: 1.5rem;
-    background-color: black;
+    background-color: var(--background-darkest-color);
     margin-bottom: 1rem;
     flex-direction: column;
     align-items: flex-start;
     width: 14.5rem;
-    /* min-width: 10%vw; */
 }
 
 div#title {
@@ -101,7 +103,7 @@ div#search {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: white;
+    background-color: var(--background-lightest-color);
     width: 100%;
     padding-left: .7rem;
     padding-right: 2rem;
@@ -141,8 +143,8 @@ button:hover {
 }
 
 select {
-    background-color: black;
-    color: white;
+    background-color: var(--background-darkest-color);
+    color: var(--font-color);
     padding: .1rem;
     border-radius: 10px;
 }

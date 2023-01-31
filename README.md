@@ -6,8 +6,8 @@ https://redapengam.github.io/TrackToClip/
 
 ## Features
 
-- [x] "fr" & "en" switchable version
+- [x] Languages: "fr" & "en"
 - [ ] Pop-ups/Modals for phone users to provide them a visual feedback
-- [ ] Spotify playlist info visible: picture, name, total tracks, color
+- [ ] Spotify playlist info: picture, name, total tracks, color
 - [ ] Fancy animations: loading times, displaying info...
 

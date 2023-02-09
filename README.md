@@ -1,6 +1,7 @@
 # TrackToClip
 
 From any Spotify playlist, copy track names to clipboard in one clic!<br/>
+This may be useless, but it is helpful to understand the basics of HTTP request & API call in JavaScript.<br/>
 Access the website here:<br/>
 https://redapengam.github.io/TrackToClip/
 
